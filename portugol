@@ -1,0 +1,57 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		//variaveis
+		cadeia nomeAluno = "", exercicioNecessario = ""
+		cadeia nomeMusculacao = "musculucao", nomeCorrida = "corrida", nomebicicleta = "bicicleta"
+		
+		real alturaAluno = 0.0, pesoAluno = 0.0
+		real imc
+		
+		inteiro perdaCaloria = 0, valorPagar = 0, valorDesconto = 0
+		inteiro musculacao = 0, corrida = 0, bicicleta = 0
+
+		//entradas
+		escreva("Informe o nome do aluno\n: ")
+		leia(nomeAluno)
+		escreva("Informe a altura do aluno\n:")
+		leia(alturaAluno)
+		escreva("Informe o peso do aluno\n:")
+		leia(pesoAluno)
+		escreva("Qual a quantidade de calorarias a serem gastas na semana\n:")
+		leia(perdaCaloria)
+		//fim das entradas
+
+		//processamento IMC
+		imc = pesoAluno / (alturaAluno * alturaAluno)
+		//fim processamento IMC
+		
+		//inicio processamento lista de exercicios
+		se(perdaCaloria <= 450){
+			exercicioNecessario = nomeMusculacao
+			valorPagar = 80.0
+		}se(perdaCaloria <= 1850){
+			exercicioNecessario = nomeMusculacao + nomeCorrida
+			valorPagar = 100.0
+		}se(perdaCaloria > 1850){
+			exercicioNecessario = nomeMusculacao + nomeCorrida + nomebicicleta
+			valorPagar = 130.0
+		}	
+		//fim processamento lista de exercicios
+
+		//inicio processamento desconto
+		se(perdaCaloria >= 4000){
+			valorDesconto = (valorPagar)*50 /100
+		}
+		//fim processamento desconto
+
+		//inicio da saída de dados
+		
+		escreva("Total de imc\n: " +imc+ "\nlista de exercícios: " +exercicioNecessario)
+		escreva("\nValor do plano: " +valorPagar)
+		escreva("\nDesconto: "+valorDesconto+ "\nValorPagar:" +valorDesconto)
+	
+	}
+}
