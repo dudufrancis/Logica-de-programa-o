@@ -1,0 +1,26 @@
+package produtos;
+
+import javax.swing.JOptionPane;
+
+public class Produtos {
+
+    public static void main(String[] args) {
+
+        String[] frutas = new String[2];
+        float[] valores = new float[2];
+        int[] qtFrutas = new int[2];
+
+        for (int i = 0; i < 2; i++) {
+            frutas[i] = JOptionPane.showInputDialog("Informe o nome da fruta: ");
+            valores[i] = Float.parseFloat(JOptionPane.showInputDialog("Informe o valor da fruta: "));
+            qtFrutas[i] = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de frutas: "));
+        }
+        for (int i = 0; i< 2; i++){
+            JOptionPane.showMessageDialog(null, "A fruta " + frutas[i]);
+            JOptionPane.showMessageDialog(null, "O valor " + valores[i]);
+            JOptionPane.showMessageDialog(null, "A quantidade " + qtFrutas[i]);
+        }
+        
+    }
+
+}
