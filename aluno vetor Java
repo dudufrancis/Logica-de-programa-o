@@ -1,0 +1,21 @@
+package alunovetor;
+
+import javax.swing.JOptionPane;
+
+public class Alunovetor {
+
+    public static void main(String[] args) {
+        
+      String[] aluno = new String[3];
+       
+      aluno[0] = JOptionPane.showInputDialog("Aluno 1: ");
+      aluno[1] = JOptionPane.showInputDialog("Aluno 2: ");
+      aluno[2] = JOptionPane.showInputDialog("Aluno 3: ");
+      
+      JOptionPane.showMessageDialog(null, aluno[0]);
+      JOptionPane.showMessageDialog(null, aluno[1]);
+      JOptionPane.showMessageDialog(null, aluno[2]);
+        
+    }
+    
+}
