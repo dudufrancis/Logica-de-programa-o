@@ -1,0 +1,19 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia nome
+		inteiro idade
+	
+		escreva("*** Bem vindo ***\n")
+		
+		escreva("\nInforme sue nome: ")
+		leia(nome)
+		
+		escreva("\nInforme sua idade: ")
+		leia(idade)
+		
+		escreva("\n*** Fim do programa ***")
+	}
+}
