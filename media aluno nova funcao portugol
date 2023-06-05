@@ -1,0 +1,101 @@
+programa
+{
+	inclua biblioteca Matematica
+	funcao inicio()
+	{
+		//-- VARIAVEIS E CONSTANTES
+		inteiro numeronotas = 0
+		cadeia nomeAluno = ""
+		real nota[10], media = 0.0, soma
+		caracter resposta
+
+		//ENTRADAS DE DADOS
+		faca{
+			limpa()
+			
+		faca {
+		  soma = 0.0
+		  escreva("\nInforme o nome do aluno: ")
+		  leia(nomeAluno)
+		  se(nomeAluno == ""){
+		  	escreva("\nNome inválido")
+		  }
+		}enquanto(nomeAluno == "" )
+
+		//CONTINUA ENTRADA DE DADOS	
+		faca{
+			  escreva("\nQual a quantidade de notas do aluno: ")
+		  leia(numeronotas)
+		  
+		  se(numeronotas <= 0){
+		  	escreva("\nNota inválida")	
+		  }
+		}enquanto (numeronotas <= 0)
+		
+		  		
+		  para(inteiro i = 0; i < numeronotas; i++){
+		  
+		  escreva("\nInforme as notas do aluno: ")
+		  leia(nota[i])
+		  soma += nota[i]		  
+
+		  }
+		  media = soma / numeronotas
+		  
+		  media = Matematica.arredondar(media, 2)
+
+		//SAÍDAS
+		escreva("A média do " +nomeAluno+ " é "+media)
+		
+		escreva("\nDeseja continuar? (s/n)")
+		leia(resposta)		  	
+
+		}enquanto(resposta == 'S' ou resposta == 's')
+	}
+
+	funcao media() 
+	{
+
+			inteiro numeronotas = 0
+			cadeia nomeAluno = ""
+			real nota[10], media = 0.0, soma
+			caracter resposta
+
+			//ENTRADAS DE DADOS
+			
+			faca {
+		  soma = 0.0
+		  escreva("\nInforme o nome do aluno: ")
+		  leia(nomeAluno)
+		  se(nomeAluno == ""){
+		  	escreva("\nNome inválido")
+		  }
+		}enquanto(nomeAluno == "" )
+
+		//CONTINUA ENTRADA DE DADOS	
+		faca{
+			  escreva("\nQual a quantidade de notas do aluno: ")
+		  leia(numeronotas)
+		  
+		  se(numeronotas <= 0){
+		  	escreva("\nNota inválida")	
+		  }
+		}enquanto (numeronotas <= 0)
+		
+		  		
+		  para(inteiro i = 0; i < numeronotas; i++){
+		  
+		  escreva("\nInforme as notas do aluno: ")
+		  leia(nota[i])
+		  soma += nota[i]		  
+
+		  }
+		  media = soma / numeronotas
+		  
+		  media = Matematica.arredondar(media, 2)
+
+		//SAÍDAS
+		escreva("A média do " +nomeAluno+ " é "+media)
+			
+	}
+}
