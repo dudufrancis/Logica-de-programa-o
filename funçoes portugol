@@ -1,0 +1,30 @@
+programa
+{
+	cadeia nome
+	inteiro idade
+	
+	funcao inicio()
+	{
+
+		Imprime("BEM VINDO")
+
+		Entrada()
+		Saida()
+
+		Imprime("FIM DO PROGRAMA")
+		
+	}
+	funcao Imprime(cadeia texto){
+		escreva("\n*** " + texto + " ***")
+	}
+	funcao Entrada(){
+		escreva("\ninforme seu nome: ")
+		leia(nome)
+		escreva("\ninforme sua idade: ")
+		leia(idade)
+	}
+	funcao Saida(){
+		escreva("\nSeu nome é " +nome)
+		escreva("\nSua idade é " + idade)
+	}
+}
