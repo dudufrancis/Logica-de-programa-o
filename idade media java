@@ -1,0 +1,24 @@
+package idademedia;
+
+import javax.swing.JOptionPane;
+
+public class Idademedia {
+
+    public static void main(String[] args) {
+        int contador = 0;
+        int idade = 0, soma = 0, media;
+        do{
+            idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade: "));
+            if(idade != -1){
+                soma += idade;
+                contador++;
+            }
+            
+        }while(idade != -1);
+        
+        media = soma/contador;
+        
+        JOptionPane.showMessageDialog(null, "Sua media é " + media);
+    }
+    
+}
