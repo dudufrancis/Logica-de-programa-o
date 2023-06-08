@@ -1,0 +1,24 @@
+package senha;
+
+import javax.swing.JOptionPane;
+
+public class Senha {
+
+    public static void main(String[] args) {
+        
+        String senha = JOptionPane.showInputDialog("Criar senha: ").toUpperCase();
+        String senhaDigitada = "";
+        
+        do{
+            senhaDigitada = JOptionPane.showInputDialog("Digite sua senha ");    
+            
+        }while(!senhaDigitada.equals(senha));
+        
+        senhaDigitada = JOptionPane.showInputDialog(null, "Senha: "+ senha + "\nsenhaDigitada: "+ senhaDigitada);
+
+        
+        System.out.println("Seja Bem Vindo!!!");
+        
+    }
+    
+}
