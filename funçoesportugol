@@ -1,0 +1,71 @@
+programa
+{
+	
+	inteiro contador =  0
+	cadeia produto[999]
+	
+	funcao inicio()
+	{
+		cadeia acao
+
+		faca{
+			ImprimeMenu()
+			
+			leia(acao)
+
+			se(acao == "1"){
+				Inserir()
+			}
+			se(acao == "2"){
+				Excluir()
+			}
+			se(acao == "3"){
+				Atualizar()
+			}
+			se(acao == "4"){
+				Exibir()
+			}						
+			
+		}enquanto(acao != "5")
+
+	}
+	funcao ImprimeMenu(){
+		
+		escreva("\n\n*** Menu ***\n\n")
+		escreva("1 - Inserir\n")
+		escreva("2 - Excluir\n")
+		escreva("3 - Atualizar\n")
+		escreva("4 - Exibir\n")
+		escreva("5 - Encerrar\n")
+		escreva("\nInforme qual opção deseja inserir: ")
+	}
+	funcao Inserir(){
+			cadeia NomeProduto = ""
+		
+		faca{
+			escreva("\nInforme o produto: ")
+			leia(NomeProduto)
+			se(NomeProduto == ""){
+				escreva("\nProduto Inválido")
+			}
+
+	}enquanto(NomeProduto == "")
+
+	}	
+	
+		funcao Excluir() {
+			
+		}
+
+		funcao Atualizar() {
+			
+		}
+
+		funcao Exibir() {
+			
+		}
+
+		funcao Encerrar() {
+			
+		}
+}
