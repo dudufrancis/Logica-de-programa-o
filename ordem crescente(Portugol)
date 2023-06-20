@@ -18,10 +18,15 @@ programa
 				}
 			}
 		}
-
+		
+		escreva("{")
 		para(inteiro i = 0; i < 13; i++){
-			escreva("\nA ordem é: "+ numeros[i])
-		}		
+			se(i > 0){
+				escreva(",")				
+			}
+			escreva(numeros[i])
+		}	
+		escreva("}")	
 	}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 }
