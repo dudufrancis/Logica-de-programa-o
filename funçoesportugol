@@ -1,71 +1,139 @@
 programa
 {
 	
-	inteiro contador =  0
-	cadeia produto[999]
+	inteiro contador = 0
+	inteiro indice = 0
+	inteiro atualizarProduto = 0
+	cadeia  classificao [999]
+	cadeia  produto [999]
 	
+
 	funcao inicio()
 	{
 		cadeia acao
 
 		faca{
 			ImprimeMenu()
-			
+
 			leia(acao)
+		
 
 			se(acao == "1"){
-				Inserir()
+			   Inserir()
 			}
-			se(acao == "2"){
-				Excluir()
-			}
-			se(acao == "3"){
-				Atualizar()
-			}
-			se(acao == "4"){
-				Exibir()
-			}						
-			
-		}enquanto(acao != "5")
 
+			se (acao == "2"){
+			    Excluir()
+			}
+
+			se (acao == "3"){
+			    Atualizar()
+			}
+
+			se (acao == "4"){
+			    Exibir()
+			}
+
+		} enquanto (acao != "5")
 	}
+
 	funcao ImprimeMenu(){
-		
-		escreva("\n\n*** Menu ***\n\n")
-		escreva("1 - Inserir\n")
-		escreva("2 - Excluir\n")
-		escreva("3 - Atualizar\n")
-		escreva("4 - Exibir\n")
-		escreva("5 - Encerrar\n")
-		escreva("\nInforme qual opção deseja inserir: ")
+
+			escreva("\n\n******* Menu ********\n\n")
+			escreva("1 - Inserir   \n")
+			escreva("2 - Excluir   \n")
+			escreva("3 - Atualizar \n")
+			escreva("4 - Exibir    \n")
+			escreva("5 - Encerrar  \n")
+			escreva("\nQual opção deseja selecionar: ")
 	}
+
 	funcao Inserir(){
-			cadeia NomeProduto = ""
+
+		cadeia nomeProduto = ""
+		cadeia classificacaoProduto = ""
+		
 		
 		faca{
-			escreva("\nInforme o produto: ")
-			leia(NomeProduto)
-			se(NomeProduto == ""){
-				escreva("\nProduto Inválido")
+			escreva("\nInforme o nome do produto: ")
+			leia(nomeProduto)
+			escreva("\nInforme a classificacao do produto A, B, C: ")
+			leia(classificacaoProduto)
+			
+			se(nomeProduto == ""){
+			   escreva("\nNome do produto invalido")
 			}
 
-	}enquanto(NomeProduto == "")
+		}enquanto(nomeProduto == "")
 
-	}	
+		produto[contador] = nomeProduto
+		classificao[contador] = classificacaoProduto
+		contador ++
+
+	}
+
+	funcao Excluir(){
+
+		faca{
+			escreva("\nInforme o indice excluido: ")
+			leia(indice)
+			
+		}enquanto (indice >= contador)
+
+		produto[indice] = ""
+
+					
+		
+	}
+
+	funcao Atualizar(){
+
+		cadeia descricao = ""
+
+		faca{
+			escreva("\nInforme o indice desejado: ")
+			leia(indice)
+			
+		}enquanto (indice >= contador)
+
+		faca{
+			escreva("\nInforme o produto que deseja atualizar: ")
+			leia(descricao)
+			
+		}enquanto (descricao == "")
+		
+		produto[indice] = descricao
+	}
+
+
+	funcao Exibir(){
+
+		cadeia  ordem = ""
+		
+		
+		se (ordem == "D") {
+		    para (inteiro i = contador; i >= 0; i--){
+		    		se (produto[i] != ""){
+		    			escreva ("\nIndice " + i + "\n" + produto[i]) 
+				}
+
+			}
+		
+		} senao {
+			para (inteiro i = 0; i < contador; i++){
+				se (produto[i] != ""){
+					escreva("\nIndice " + i + "\n" + produto[i])	
+						
+				}
+			}
+
+			para (inteiro j = 0; j < contador; j++){
+				se (classificao[j] != ""){
+					escreva("\nClassificação " + classificao[j])
+				}
+					
+			}
+		}
 	
-		funcao Excluir() {
-			
-		}
-
-		funcao Atualizar() {
-			
-		}
-
-		funcao Exibir() {
-			
-		}
-
-		funcao Encerrar() {
-			
-		}
+	}
 }
