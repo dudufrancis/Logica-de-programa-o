@@ -1,0 +1,20 @@
+
+package javaapplication;
+
+import javax.swing.JOptionPane;
+
+public class aula26_2 {
+    public static void main(String[] args) {
+        
+        int [] numeros = new int[10];
+        int soma = 0;
+        
+        for(int i = 0; i < 10; i++){
+            
+            numeros[i] = Integer.parseInt(JOptionPane.showInputDialog("Informe os números: "));
+            soma += numeros[i];
+        }
+         JOptionPane.showMessageDialog(null,"A soma total é: " +soma);
+    }
+    
+}
