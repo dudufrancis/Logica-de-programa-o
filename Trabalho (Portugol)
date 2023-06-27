@@ -1,0 +1,171 @@
+programa
+{
+	
+		const cadeia banco_login = "adm", banco_senha = "adm"
+		inteiro contador = 0
+		cadeia produto[999], classificacao[999] 
+	
+	funcao inicio()
+	{
+		logico resultado = falso
+		resultado = Login()
+		se(resultado){
+			escreva("Login válido")
+		} senao {
+			escreva("Login inválido")
+		}
+				
+	}
+	
+	funcao logico Login(){
+
+		cadeia login, senha logico resultado = falso
+
+		faca{
+		escreva("\nInforme o login: ")
+		leia(login)
+
+		escreva("\nInforme a senha: ")
+		leia(senha)
+
+		se(banco_login == login e banco_senha == senha){
+			resultado = verdadeiro
+		}
+		
+		}enquanto(resultado == falso) 
+				
+		retorne resultado
+	}
+
+	funcao InserirMenu(){
+
+		cadeia acao
+
+		faca{
+			ImprimeMenu()
+			
+			leia(acao)
+
+			se(acao == "1"){
+				InserirProduto()
+			}
+			se(acao == "2"){
+				AtualizarProduto()
+			}
+			se(acao == "3"){
+				ExcluirProduto()
+			}
+			se(acao == "4"){
+				ExibirProduto()
+			}
+			se(acao == "5"){
+				ExibirOrdem()
+			}
+			se(acao == "6"){
+				ExibirClassificacao()
+			}
+			se(acao == "7"){
+				AdicionarEstoque()
+			}
+			se(acao == "8"){
+				RemoverEstoque()
+			}
+			
+		} enquanto(acao != "9")
+	}
+
+	funcao ImprimeMenu(){
+
+		escreva("\n\n	   ****** MENU ******	   \n\n")
+		escreva("1 - Inserir Produto				\n")
+		escreva("2 - Atualizar Produto			\n")
+		escreva("3 - Excluir Produto				\n")
+		escreva("4 - Exibir Produto				\n")
+		escreva("5 - Exibir por Ordem				\n")
+		escreva("6 - Exibir Produto por Classificação\n")
+		escreva("7 - Adicionar Estoque			\n")
+		escreva("8 - Remover Estoque				\n")
+		escreva("\nQual Opção Deseja Selecionar:       ")
+	}
+	
+	funcao InserirProduto(){
+
+		cadeia nomeProduto = ""
+		cadeia classificacaoProduto = ""
+
+		faca{
+			escreva("\nInforme o Nome do Produto: ")
+			leia(nomeProduto)
+
+			escreva("\nInforme a Classificação do Produto A, B, C: ")
+			leia(classificacaoProduto)
+
+			se(nomeProduto == ""){
+				escreva("\nNome do Produto Inválido")
+			}
+						
+		} enquanto(nomeProduto == "")
+
+		produto[contador] = nomeProduto
+		classificacao[contador] = classificacaoProduto
+		contador++
+		
+	}
+
+	funcao AtualizarProduto(){
+
+		inteiro indice
+		cadeia descricao
+
+		faca{
+			escreva("\nInforme o Indice Desejado: ")
+			leia(indice)
+
+		} enquanto(indice >= contador)
+
+		faca{
+			escreva("\nInforme a Nova Descrição: ")
+			leia(descricao)
+			
+		} enquanto(descricao == "")
+
+		produto[indice] = descricao		
+	}
+
+	funcao ExcluirProduto(){
+
+		inteiro indice = 0
+
+		faca{
+			escreva("\nInforme o Indice a ser Excluido: ")
+			leia(indice)
+			
+		} enquanto (indice >= contador)
+
+		produto[indice] = ""
+
+	}
+
+	funcao ExibirProduto(){
+
+		
+	}
+
+	funcao ExibirOrdem(){
+
+		
+		
+	}
+
+	funcao ExibirClassificacao(){
+		
+	}
+
+	funcao AdicionarEstoque(){
+		
+	}
+
+	funcao RemoverEstoque(){
+
+	}
+}
