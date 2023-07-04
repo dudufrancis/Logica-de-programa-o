@@ -5,9 +5,8 @@ programa
 	inteiro contador = 0
 	cadeia produto[999], classificacaoProduto[999] 
 	inteiro estoque[999]
-	 // { "lapis", "apontador", "borracha", "caneta" }
-	//       0          1           2          3
-	//  { "A",         "B",        "A,"       "A"  }
+
+
 	funcao inicio()
 	{
 		logico resultado = falso
@@ -98,6 +97,7 @@ programa
 			se(nomeProduto == ""){
 				escreva("\nNome do Produto Inválido")
 			}
+
 						
 		} enquanto(nomeProduto == "")
 
@@ -133,7 +133,7 @@ programa
 				leia(descricao)			
 
 				se(descricao == ""){
-					escreva("Descrição Inválida")
+					escreva("\nDescrição Inválida")
 				}
 				
 			}enquanto(descricao == "")
@@ -152,7 +152,9 @@ programa
 		inteiro indice = 0
 
 		
-		escreva("Informe o Indice a ser Excluido ")
+		escreva("\n
+		
+		Informe o Indice a ser Excluido ")
 		leia(indice)
 			
 		se(produto[indice] != ""){
@@ -163,7 +165,7 @@ programa
 			
 			
 		}senao{
-			escreva("Indice Inválido")
+			escreva("\nIndice Inválido")
 		}
 	}
 
@@ -172,13 +174,13 @@ programa
 		se (ordem == "D"){
 			para (inteiro i = contador; i >= 0; i--){
 				se (produto[i] != ""){
-					escreva("Produto (" + i +"): " + produto[i] + "\n")
+					escreva("\nProduto (" + i +"): " + produto[i] + " estoque = " + estoque[i] +"\n")
 				}
 			}
 		} senao {
 			para (inteiro i = 0; i < contador; i++){
 				se (produto[i] != ""){
-					escreva("Produto (" + i +"): " + produto[i] + "\n")
+					escreva("\nProduto (" + i +"): " + produto[i] + " estoque = " + estoque[i] +"\n")
 				}
 			}
 		}
@@ -188,7 +190,8 @@ programa
 		
 		cadeia ordem = ""
 				
-		escreva("Informe a Ordem de Impressão: (D/C)")
+		escreva("\nInforme a Ordem de Impressão: (D/C) ")
+		
 		leia(ordem)
 
 		Exibir(ordem)
@@ -199,12 +202,12 @@ programa
 
 		cadeia produtoClassificacao
 
-		escreva("Informe Classificação: ")
+		escreva("\nInforme Classificação: ")
 		leia(produtoClassificacao)
 		para (inteiro i = 0; i < contador; i++){
 			se (produto[i] != ""){
 				se(classificacaoProduto[i] == produtoClassificacao){
-					escreva("Produto (" + i +"): " + produto[i] + "\n")
+					escreva("\nProduto (" + i +"): " + produto[i] + "\n")
 				}
 			}
 		}
@@ -214,12 +217,12 @@ programa
 
 		inteiro indiceProduto,quantidade
 
-		escreva("Informe o Indice do Produto: ")
+		escreva("\nInforme o Indice do Produto: ")
 		leia(indiceProduto)
 
-		se(produto[indiceProduto] != 0){
+		se(produto[indiceProduto] != ""){
 
-				escreva("Informe a Quantidade que Deseja Adicionar:")
+				escreva("\nInforme a Quantidade que Deseja Adicionar: ")
 				leia(quantidade)
 
 				faca{
@@ -231,7 +234,7 @@ programa
 				estoque[indiceProduto] += quantidade
 				
 		}senao{
-			escreva("Indice Inválido")
+			escreva("\nIndice Inválido")
 		}
 	}
 
@@ -240,12 +243,12 @@ programa
 		inteiro indice, quantidadeAdicionar
 		cadeia posicaoProduto
 		
-		escreva("Informe o Indice do Produto: ")
+		escreva("\nInforme o Indice do Produto: ")
 		leia(indice)
-		se(indice >= 0){
-
-			se(produto[indice] != ""){
-				escreva("Informe a Quantidade que Deseja Remover:")
+				se(indice >= 0){
+			
+				se(produto[indice] != ""){
+				escreva("\nInforme a Quantidade que Deseja Remover: ")
 				leia(quantidadeAdicionar)
 
 				faca{
@@ -254,11 +257,11 @@ programa
 					}
 				}enquanto(quantidadeAdicionar <= 0)
 
-				estoque[indice] += quantidadeAdicionar
+				estoque[indice] -= quantidadeAdicionar
 			}
 				
 		}senao{
-			escreva("Indice Inválido")
+			escreva("\nQuantidade Inválida")
 		}
 		
 	}
