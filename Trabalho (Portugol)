@@ -5,6 +5,7 @@ programa
 	inteiro contador = 0
 	cadeia produto[999], classificacaoProduto[999] 
 	inteiro estoque[999]
+	real precoProduto
 
 
 	funcao inicio()
@@ -38,6 +39,7 @@ programa
 				se(acao == "6"){
 					ExibirClassificacao()
 				}
+				
 				se(acao == "7"){
 					AdicionarEstoque()
 				}
@@ -45,10 +47,11 @@ programa
 					RemoverEstoque()
 				}
 				
+				
 			} enquanto(acao != "9")
 			
 		} senao {
-			escreva("Login inválido")
+			escreva("\nLogin inválido")
 		}
 				
 	}
@@ -97,9 +100,18 @@ programa
 			se(nomeProduto == ""){
 				escreva("\nNome do Produto Inválido")
 			}
-
 						
 		} enquanto(nomeProduto == "")
+
+		
+		faca{
+			escreva("\nInforme o Preço do Produto: ")
+			leia(precoProduto)
+					
+			se(precoProduto <= 0){
+				escreva("\nPreço Inválido")
+			}
+		}enquanto(precoProduto <= 0)
 
 		faca{
 			escreva("\nInforme a Classificação do Produto A, B, C: ")
@@ -152,9 +164,7 @@ programa
 		inteiro indice = 0
 
 		
-		escreva("\n
-		
-		Informe o Indice a ser Excluido ")
+		escreva("\nInforme o Indice a ser Excluido ")
 		leia(indice)
 			
 		se(produto[indice] != ""){
@@ -180,7 +190,7 @@ programa
 		} senao {
 			para (inteiro i = 0; i < contador; i++){
 				se (produto[i] != ""){
-					escreva("\nProduto (" + i +"): " + produto[i] + " estoque = " + estoque[i] +"\n")
+					escreva("\nProduto (" + i +"): " + produto[i] + " R$ " + precoProduto + ", " +"estoque = " + estoque[i] +"\n")
 				}
 			}
 		}
