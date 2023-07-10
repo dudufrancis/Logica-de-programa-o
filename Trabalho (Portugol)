@@ -5,7 +5,7 @@ programa
 	inteiro contador = 0
 	cadeia produto[999], classificacaoProduto[999] 
 	inteiro estoque[999]
-	real precoProduto
+	
 
 
 	funcao inicio()
@@ -103,25 +103,17 @@ programa
 						
 		} enquanto(nomeProduto == "")
 
-		
-		faca{
-			escreva("\nInforme o Preço do Produto: ")
-			leia(precoProduto)
-					
-			se(precoProduto <= 0){
-				escreva("\nPreço Inválido")
-			}
-		}enquanto(precoProduto <= 0)
-
 		faca{
 			escreva("\nInforme a Classificação do Produto A, B, C: ")
 			leia(classificacao)
 
 			se(classificacao == ""){
-				escreva("\nClassificação Inválida")
+				
 			}
-			
-		} enquanto(classificacao == "")
+				escreva("\nClassificação Inválida")
+				
+		} enquanto(classificacao != "A" e classificacao != "B" e classificacao != "C")
+				
 
 		produto[contador] = nomeProduto
 		classificacaoProduto[contador] = classificacao
@@ -134,12 +126,14 @@ programa
 
 		inteiro indice
 		cadeia descricao
+		
 
 		escreva("\nInforme o Indice do Produto: ")
 		leia(indice)
 
 		se(produto[indice] != ""){
-//sim
+
+
 			faca{
 				escreva("\nInforme Nova Descrição do Produto: ")
 				leia(descricao)			
@@ -153,7 +147,7 @@ programa
 			produto[indice] = descricao
 			
 		} senao {
-			//nao
+			
 			escreva("\nIndice Inválido")
 		}
 		
@@ -190,7 +184,7 @@ programa
 		} senao {
 			para (inteiro i = 0; i < contador; i++){
 				se (produto[i] != ""){
-					escreva("\nProduto (" + i +"): " + produto[i] + " R$ " + precoProduto + ", " +"estoque = " + estoque[i] +"\n")
+					escreva("\nProduto (" + i +"): " + produto[i]  + "estoque = " + estoque[i] +"\n")
 				}
 			}
 		}
